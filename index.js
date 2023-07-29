@@ -1,3 +1,4 @@
+import calculate from "./calculate.js"
 const main = document.querySelector('main')
 const root = document.querySelector(':root')
 const input = document.getElementById('input')
@@ -37,7 +38,7 @@ input.addEventListener('keydown', function(ev) {
         input.value = input.value.slice(0,-1)
     }
     if(ev.key === 'Enter') {
-        calculate()
+        calculate
     }
 })
 document.getElementById('clear').addEventListener('click', function() {
@@ -46,13 +47,6 @@ document.getElementById('clear').addEventListener('click', function() {
 
 })
 
-function calculate() {
-    resultInput.value = 'ERROR'
-    resultInput.classList.add('error')
-    const result = eval(input.value)
-    resultInput.value = result
-    resultInput.classList.remove('error')
-}
 document.getElementById('themeSwitcher').addEventListener('click', function() {
     if(main.dataset.theme === 'dark') {
     root.style.setProperty('--bg-color', '#f1f5f9')
